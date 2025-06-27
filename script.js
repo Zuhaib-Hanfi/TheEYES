@@ -58,3 +58,18 @@ document.addEventListener("mousemove", (e)=>{
 
     pupil2.style.transform = `translate(${x}px, ${y}px)`;
 });
+
+
+
+  function isLaptop() {
+    const isWideScreen = window.innerWidth >= 1024;
+    const isNotTouchDevice = !('ontouchstart' in window);
+    const isDesktopAgent = /Win|Mac|Linux/i.test(navigator.platform);
+
+    return isWideScreen && isNotTouchDevice && isDesktopAgent;
+  }
+
+  if (!isLaptop()) {
+    alert("This experience works best on a laptop or desktop!");
+  }
+
